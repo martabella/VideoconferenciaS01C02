@@ -15,7 +15,7 @@ public class Main {
         if (edad>=EDAD_MINIMA){
 
             System.out.println("Ahora puedes pagar la entrada. Son "+IMPORTE_ENTRADA+"€");
-            int pagoEntrada = input.nextInt();
+            float pagoEntrada = input.nextFloat();
             input.nextLine();
             if (pagoEntrada>=IMPORTE_ENTRADA){
                 System.out.println("Puedes entrar al local. Tu cambio es: "+(pagoEntrada-IMPORTE_ENTRADA));
