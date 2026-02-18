@@ -26,7 +26,7 @@ public class Main {
         }else{
             System.out.println("No puedes entrar");
         }
-        System.out.println("Fin del programa");
+        System.out.println("Fin del programa -- ");
 
     }
 }
