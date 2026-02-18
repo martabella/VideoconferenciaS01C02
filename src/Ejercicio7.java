@@ -14,13 +14,16 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         final float IVA=1.21f;
-        final float DESCUENTO=10f;
+        final float DESCUENTO=0.1f;
+        float precioBase;
+        float pvp;
+        float descuento;
 
         System.out.println("Introduce el precio base");
-        float precioBase = input.nextFloat();
+        precioBase = input.nextFloat();
         input.nextLine();
         if (precioBase>0) {
-            float pvp = precioBase * IVA;
+            pvp = precioBase * IVA;
             if (pvp>=50){
                 System.out.println("Aplicando descuento "+DESCUENTO+"% de "+(precioBase*(DESCUENTO/100)));
                 float precioConDescuento = precioBase - (precioBase*(DESCUENTO/100));
