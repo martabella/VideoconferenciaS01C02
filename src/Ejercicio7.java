@@ -17,21 +17,22 @@ public class Ejercicio7 {
         final float DESCUENTO=0.1f;
         float precioBase;
         float pvp;
-        float descuento;
+        float descuentoAplicable;
 
-        System.out.println("Introduce el precio base");
+        System.out.println("Introduce el precio base del producto");
         precioBase = input.nextFloat();
         input.nextLine();
+
         if (precioBase>0) {
-            pvp = precioBase * IVA;
-            if (pvp>=50){
-                System.out.println("Aplicando descuento "+DESCUENTO+"% de "+(precioBase*(DESCUENTO/100)));
-                float precioConDescuento = precioBase - (precioBase*(DESCUENTO/100));
-                pvp =  precioConDescuento*IVA;
-                System.out.println("El pvp es " + pvp+ " €");
-            }else {
-                System.out.println("El pvp es " + pvp + " €");
+            pvp = precioBase;
+            if (precioBase>=50){
+                descuentoAplicable = precioBase*DESCUENTO;
+                System.out.println("Aplicando descuento "+(DESCUENTO*100)+"% de "+descuentoAplicable);
+                pvp = pvp - descuentoAplicable;
             }
+            pvp = pvp*IVA;
+            System.out.println("El pvp es " + pvp+ " €");
+
         }else{
             System.out.println("El valor introducido debe ser mayor que 0");
         }
