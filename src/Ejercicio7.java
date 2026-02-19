@@ -15,6 +15,7 @@ public class Ejercicio7 {
         Scanner input = new Scanner(System.in);
         final float IVA=1.21f;
         final float DESCUENTO=0.1f;
+        final float UMBRAL_DESCUENTO = 50f;
         float precioBase;
         float pvp;
         float descuentoAplicable;
@@ -26,7 +27,7 @@ public class Ejercicio7 {
 
             if (precioBase > 0) {
                 pvp = precioBase;
-                if (precioBase >= 50) {
+                if (precioBase >= UMBRAL_DESCUENTO) {
                     descuentoAplicable = precioBase * DESCUENTO;
                     System.out.println("Aplicando descuento " + (DESCUENTO * 100) + "% de " + descuentoAplicable);
                     pvp = pvp - descuentoAplicable;
@@ -35,10 +36,10 @@ public class Ejercicio7 {
                 System.out.println("El pvp es " + pvp + " €");
 
             } else {
-                System.out.println("El valor introducido debe ser mayor que 0");
+                System.out.println("El precio debe ser mayor que 0");
             }
         }else{
-            System.out.println("Error. Debes introducir un número");
+            System.out.println("Error. Debes introducir un número válido (ej: 10.5)");
         }
 
     }

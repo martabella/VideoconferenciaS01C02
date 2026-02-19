@@ -10,14 +10,15 @@ public class Challenge1 {
         int minNumber;
         int maxNumber;
 
+        System.out.println("✨ ¡Bienvenido al juego del Número Mágico! ✨");
         //TODO Pedir minimo al usuario
-        System.out.println("Introduce el valor entero mínimo del Magic Number");
+        System.out.println("Primero, dime el valor mínimo: ");
         if (input.hasNextInt()){
             minNumber = input.nextInt();
             input.nextLine();
 
             //TODO Pedir máximo al usuario
-            System.out.println("Introduce el valor entero máximo del Magic Number");
+            System.out.println("Ahora, dime el valor máximo:");
             if (input.hasNextInt()) {
                 maxNumber = input.nextInt();
                 input.nextLine();
@@ -26,24 +27,25 @@ public class Challenge1 {
 
                     //TODO Calcular número mágico entre mínimo y máximo
                     magicNumber = random.nextInt(minNumber, maxNumber+1);
-                    System.out.println("Pista: " + magicNumber);
+                    //System.out.println("Pista: " + magicNumber);
+                    System.out.println("Todo listo. He pensado un número entre " + minNumber + " y " + maxNumber);
 
                     //TODO Pedir número al usuario
-                    System.out.println("Introduce tu número mágico. Escoge un número entre "+minNumber+" - "+maxNumber);
+                    System.out.println("¿Cuál crees que es? Introduce tu número mágico");
                     if (input.hasNextInt()) {
                         userNumber = input.nextInt();
                         input.nextLine();
                         //TODO Decidir victoria o derrota
                         if (userNumber == magicNumber) {
-                            System.out.println("😉Has acertado");
+                            System.out.println("😉Lo has adivionado!");
                         } else {
-                            System.out.println("No has acertado. Magic number es " + magicNumber);
+                            System.out.println("😔¡Casi! No has tenido suerte. El número secreto era " + magicNumber);
                         }
                     } else {
-                        System.out.println("Error. Debes introducir un número");
+                        System.out.println("Error. Debes introducir un número entero");
                     }
                 }else{
-                    System.out.println("Error. El valor máximo debe ser mayor que el mínimo");
+                    System.out.println("Error. El máximo debe ser mayor que " + minNumber + ".");
                 }
             }else{
                 System.out.println("Error. Debes introducir un número entero");
